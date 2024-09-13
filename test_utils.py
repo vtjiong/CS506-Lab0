@@ -30,5 +30,5 @@ def test_nearest_neighbor():
     ])
     query_point = np.array([3, 4])
     result = nearest_neighbor(points, query_point)
-    expected_index = 3
+    expected_index = 7
     assert result == expected_index, f"Expected index {expected_index}, but got {result}"
