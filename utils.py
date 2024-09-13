@@ -39,13 +39,5 @@ def nearest_neighbor(target_vector, vectors):
     # Hint: You should use the cosine_similarity function that you already wrote.
     # Hint: For this lab, you can just use a for loop to iterate through vectors.
     '''
-    best_similarity = -1  # Initialize with the lowest possible cosine similarity
-    best_index = -1  # Initialize with an invalid index
-    
-    for i, vector in enumerate(vectors):
-        similarity = cosine_similarity(target_vector, vector)
-        if similarity > best_similarity:
-            best_similarity = similarity
-            best_index = i
-    
-    return best_index
+    similarities = [cosine_similarity(target_vector, vec) for vec in vectors]
+    return np.argmax(similarities)
